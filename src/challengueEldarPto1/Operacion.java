@@ -10,7 +10,7 @@ public class Operacion {
 	private Double tasa;
 	private String marca;
 
-	public String validezOp(int consumo) {
+	public String validezOp(Double consumo) {
 
 		if (consumo < 1000)
 
@@ -18,7 +18,9 @@ public class Operacion {
 		else
 			return "La operación no es válida";
 	}
-
+	
+	// Calculo de tasas, me falta saber como formatear la fecha para que me de el año como "YY"
+	
 	SimpleDateFormat sdf = new SimpleDateFormat("yy");
 	private double tasaVisa = Double.valueOf(sdf.format(LocalDate.now().getYear())) / (double) LocalDate.now().getMonthValue();
 	private double tasaAmex = Double.valueOf(sdf.format(LocalDate.now().getMonthValue())) * 0.1;
