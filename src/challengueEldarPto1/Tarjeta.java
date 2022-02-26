@@ -3,6 +3,7 @@ package challengueEldarPto1;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class Tarjeta {
 
 	private Integer numTarjeta;
@@ -11,7 +12,10 @@ public class Tarjeta {
 
 	private String cardholder;
 
-	private Date fech_venc, fech_act;
+	private Date fech_venc;
+	
+	
+	
 
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -28,11 +32,12 @@ public class Tarjeta {
 	}
 
 	public String esValida(Date fech_venc, Date fech_act) {
-		if (fech_act.after(fech_venc)) {
+		
+		if (fech_act.after(fech_venc)) 
 
 			return "La tarjeta es valida!";
 
-		} else
+		 else
 			return "La tarjeta está vencida";
 	}
 
